@@ -39,6 +39,9 @@ import utils.ListNode;
 // Related Topics 递归 链表
 public class L_21_Merge_Two_Sorted_Lists {
 
+    /**
+     * 设置一个初始节点，双指针遍历两个链表并比较
+     */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode prev = new ListNode();
         ListNode cur = prev;

@@ -21,6 +21,9 @@ package homework;
 // Related Topics 排序 哈希表
 public class L_242_Valid_Anagram {
 
+    /**
+     * 用数组做哈希表，用字符减'a'的特性模拟0-26
+     */
     public boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) return false;
         int[] dic = new int[26];

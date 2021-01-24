@@ -1,18 +1,23 @@
 # 学习笔记
 
+## 总结
+* 做题过程中发现有些训练营以前做过的题已经完全没有思路了，所以以后刷题一定要反复刷，五毒神掌落实很关键。
+* 有些题的套路要记牢，比如说柱状图最大矩形利用栈来找左右边界，又或者说窗口问题使用双向队列，用好对的数据结构可以把问题化繁为简。
+* 单个问题上不要花太多时间思考，没有思路赶紧看题解，记住题解思路日后反复练习比较重要且高效。
+
 ## 简单题目
 * [删除排序数组中的重复项（Facebook、字节跳动、微软在半年内面试中考过）](src/homework/L_26_Remove_Duplicates_From_Sort_Array.java)
-* [旋转数组（微软、亚马逊、PayPal 在半年内面试中考过）TODO]()
-* [合并两个有序链表（亚马逊、字节跳动在半年内面试常考）TODO]()
-* [合并两个有序数组（Facebook 在半年内面试常考）TODO]()
+* [旋转数组（微软、亚马逊、PayPal 在半年内面试中考过）](src/homework/L_189_Rotate_Array.java)
+* [合并两个有序链表（亚马逊、字节跳动在半年内面试常考）](src/homework/L_21_Merge_Two_Sorted_Lists.java)
+* [合并两个有序数组（Facebook 在半年内面试常考）](src/homework/L_88_Merge_Sorted_Array.java)
 * [两数之和（亚马逊、字节跳动、谷歌、Facebook、苹果、微软在半年内面试中高频常考）](src/homework/L_1_Two_Sum.java)
 * [移动零（Facebook、亚马逊、苹果在半年内面试中考过）](src/homework/L_283_Move_Zeros.java)
 * [加一（谷歌、字节跳动、Facebook 在半年内面试中考过）](src/homework/L_66_Plus_One.java)
-* [有效的字母异位词（亚马逊、Facebook、谷歌在半年内面试中考过）TODO]()
+* [有效的字母异位词（亚马逊、Facebook、谷歌在半年内面试中考过）](src/homework/L_242_Valid_Anagram.java)
 
 ## 中等题目
-* [设计循环双端队列（Facebook 在 1 年内面试中考过）TODO]()
-* [字母异位词分组（亚马逊在半年内面试中常考）TODO]()
+* [~~设计循环双端队列（Facebook 在 1 年内面试中考过）~~ TODO]()
+* [字母异位词分组（亚马逊在半年内面试中常考）](src/homework/L_49_Group_Anagrams.java)
 
 ## 困难题目
 * [接雨水（亚马逊、字节跳动、高盛集团、Facebook 在半年内面试常考）](src/homework/L_42_Trapping_Rain_Water.java)

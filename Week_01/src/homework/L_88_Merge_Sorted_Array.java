@@ -34,6 +34,9 @@ package homework;
 // Related Topics 数组 双指针
 public class L_88_Merge_Sorted_Array {
 
+    /**
+     * 双指针 从后往前填
+     */
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int i = m - 1;
         int j = n - 1;

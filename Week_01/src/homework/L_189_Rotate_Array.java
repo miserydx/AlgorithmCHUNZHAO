@@ -48,6 +48,9 @@ package homework;
 // Related Topics 数组
 public class L_189_Rotate_Array {
 
+    /**
+     * 约瑟夫环
+     */
     public void rotate(int[] nums, int k) {
         k = k % nums.length;
         int count = 0;

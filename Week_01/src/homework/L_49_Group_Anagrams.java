@@ -23,6 +23,9 @@ import java.util.*;
 // Related Topics 哈希表 字符串
 public class L_49_Group_Anagrams {
 
+    /**
+     * 哈希表记录<key:排序后值, value:字符串数组>
+     */
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
         for (String s : strs) {

@@ -45,6 +45,9 @@ import java.util.HashMap;
 // Related Topics 数组 哈希表
 public class L_1_Two_Sum {
 
+    /**
+     * 双指针
+     */
     public int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
@@ -54,6 +57,9 @@ public class L_1_Two_Sum {
         return new int[]{};
     }
 
+    /**
+     * 哈希表 O(n)
+     */
     public int[] twoSum2(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {

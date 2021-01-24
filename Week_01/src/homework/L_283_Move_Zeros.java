@@ -16,6 +16,9 @@ package homework;
 // Related Topics 数组 双指针
 public class L_283_Move_Zeros {
 
+    /**
+     * 双指针 前指针记录0 后指针往后面推
+     */
     public void moveZeroes(int[] nums) {
         int prev = 0;
         for (int i = 0; i < nums.length; i++) {
