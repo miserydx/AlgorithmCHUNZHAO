@@ -1,4 +1,4 @@
-package leetcode2.week1.homework;
+package array_linkedlist;
 
 import java.util.HashMap;
 
