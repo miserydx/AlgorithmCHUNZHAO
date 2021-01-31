@@ -27,21 +27,39 @@ import java.util.Stack;
 // Related Topics 栈 数组
 public class l_84_Largest_Rectangle_In_Histogram {
 
+    /**
+     * 单调栈
+     */
     public int largestRectangleArea(int[] heights) {
         Stack<Integer> stack = new Stack<>();
         stack.push(-1);
         int maxArea = 0;
         for (int i = 0; i < heights.length; i++) {
-            while (stack.peek() != -1 && heights[i] < heights[stack.peek()]) {
-                //这里计算面积的宽度减一是因为peek的下标是要计算的左边
+            while (stack.peek() != -1 && heights[stack.peek()] > heights[i]) {
                 maxArea = Math.max(maxArea, heights[stack.pop()] * (i - stack.peek() - 1));
             }
             stack.push(i);
         }
         while (stack.peek() != -1) {
-            //这里计算面积的宽度减一是因为peek的下标是要计算的左边
             maxArea = Math.max(maxArea, heights[stack.pop()] * (heights.length - stack.peek() - 1));
         }
+        return maxArea;
+    }
+
+    public int largestRectangleArea2(int[] heights) {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(-1);
+        int maxArea = 0;
+        for (int i = 0; i <= heights.length; i++) {
+            while (stack.peek() != -1
+                    && ((i < heights.length && heights[stack.peek()] > heights[i]) || i == heights.length)) {
+                maxArea = Math.max(maxArea, heights[stack.pop()] * (i - stack.peek() - 1));
+            }
+            stack.push(i);
+        }
+//        while (stack.peek() != -1) {
+//            maxArea = Math.max(maxArea, heights[stack.pop()] * (heights.length - stack.peek() - 1));
+//        }
         return maxArea;
     }
 

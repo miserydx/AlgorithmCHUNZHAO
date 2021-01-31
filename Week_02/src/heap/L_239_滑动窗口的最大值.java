@@ -1,5 +1,6 @@
-package stack_queue;
+package heap;
 
+import java.util.Comparator;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
@@ -63,26 +64,21 @@ import java.util.PriorityQueue;
 // 1 <= k <= nums.length
 //
 // Related Topics 堆 Sliding Window
-public class L_239_Sliding_Window_Maximum {
+public class L_239_滑动窗口的最大值 {
 
+    /**
+     * 使用优先队列（大顶堆）替换上周的双端队列，简化逻辑
+     */
     public int[] maxSlidingWindow(int[] nums, int k) {
-        Deque<Integer> window = new LinkedList<>();
+        PriorityQueue<Integer> heap = new PriorityQueue<>((o1, o2) -> o2-o1);
         int maxNums[] = new int[nums.length - k + 1];
-        for (int i = 0; i < nums.length; i++) {
-            //判断窗口中第一个元素是否小于当前下标，小于则出队
-            if (!window.isEmpty() && window.peekFirst() < i - k + 1) {
-                window.pollFirst();
+        for (int i = 0; i < nums.length - k + 1; i++) {
+            if (i > k - 1) {
+                heap.remove(nums[i - k]);
             }
-            //放进窗口的数要按照从大到小的顺序排列
-            //所以如果当前遍历到的数大于窗口里的，则把窗口里的数出栈
-            while (window.peekLast() != null && nums[i] > nums[window.peekLast()]) {
-                window.pollLast();
-            }
-            //当前下表添加至队尾
-            window.addLast(i);
-            //如果窗口成型则记录最大值，最大值为对头元素
+            heap.offer(nums[i]);
             if (i >= k - 1) {
-                maxNums[i - k + 1] = nums[window.peekFirst()];
+                maxNums[i - k + 1] = heap.peek();
             }
         }
         return maxNums;
