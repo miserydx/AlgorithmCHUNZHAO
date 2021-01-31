@@ -38,8 +38,8 @@ public class L_46_全排列 {
             return;
         }
         for (int num : nums) {
-            //process
             if (!deque.contains(num)) {
+                //process
                 deque.offer(num);
                 //drill down
                 helper(nums, deque, result);

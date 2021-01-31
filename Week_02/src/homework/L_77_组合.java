@@ -23,7 +23,7 @@ public class L_77_组合 {
     /**
      * 思路类似全排列，在爆搜的基础上修改了了teminator条件即最大数量
      * 与全排列相比，遍历起点由遍历全部改为当前数字向后
-     * 开始少加了个辅助变量curNum记录当前递归栈的起点数字，导致一些情况的输出错误，这点要记下来
+     * 开始少加了个辅助变量depth记录当前递归栈的深度，导致一些情况的输出错误，这点要记下来
      */
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<>();
@@ -33,14 +33,14 @@ public class L_77_组合 {
         return result;
     }
 
-    private void helper(int n, int k, int curNum, List<Integer> array, List<List<Integer>> result) {
+    private void helper(int n, int k, int depth, List<Integer> array, List<List<Integer>> result) {
         //terminator
         if (array.size() >= k) {
             result.add(new ArrayList<>(array));
             return;
         }
-        //process
-        for (int i = curNum; i <= n; i++) {
+        for (int i = depth; i <= n; i++) {
+            //process
             array.add(i);
             //drill down
             helper(n, k, i + 1, array, result);
