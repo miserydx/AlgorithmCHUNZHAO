@@ -24,6 +24,7 @@ public class L_105_从前序与中序遍历序列构造二叉树 {
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         //TODO
+        return null;
     }
 
 }
