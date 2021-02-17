@@ -45,6 +45,10 @@ package array_linkedlist;
 // Related Topics 数组 双指针
 public class L_26_Remove_Duplicates_From_Sort_Array {
 
+    /**
+     * 双指针 后指针向后推，前后指针值不等时，前指针++位置赋值
+     * 类似移动0
+     */
     public int removeDuplicates(int[] nums) {
         int i = 0;
         for (int j = 0; j < nums.length; j++) {

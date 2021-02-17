@@ -42,6 +42,9 @@ import java.util.List;
 // Related Topics 数组 双指针
 public class L_15_Three_Sum {
 
+    /**
+     * 三指针，1从左往右，23左右夹逼
+     */
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);

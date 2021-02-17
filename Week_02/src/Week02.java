@@ -1,6 +1,4 @@
-import homework.L_46_全排列;
-import homework.L_77_组合;
-import homework.L_剑指Offer_丑数;
+import heap.L_剑指Offer_丑数;
 
 public class Week02 {
 

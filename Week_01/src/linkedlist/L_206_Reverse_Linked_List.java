@@ -1,4 +1,4 @@
-package array_linkedlist;
+package linkedlist;
 
 import utils.ListNode;
 

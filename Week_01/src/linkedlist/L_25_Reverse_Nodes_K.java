@@ -1,4 +1,4 @@
-package array_linkedlist;
+package linkedlist;
 
 import utils.ListNode;
 
@@ -30,6 +30,9 @@ import utils.ListNode;
 public class L_25_Reverse_Nodes_K {
 
     /**
+     * 检查当前这段够不够k个数字，不够的话直接返回原头节点
+     * 写一个方法反转链表
+     * 然后递归
      * @param head 链表中一段的头节点
      * @param k    k个成一段
      * @return 反转后的头节点

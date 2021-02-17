@@ -1,5 +1,3 @@
-package array_linkedlist;
-
 //假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
 //
 // 每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
@@ -24,22 +22,17 @@ package array_linkedlist;
 //3.  2 阶 + 1 阶
 //
 // Related Topics 动态规划
-public class L_70_Climb_Stairs {
+public class L_70_爬楼梯 {
 
-    /**
-     * 更多解法
-     */
     public int climbStairs(int n) {
-        if (n < 3) return n;
-        int f1 = 1;
-        int f2 = 2;
-        int f3 = 3;
-        for (int i = 3; i <= n; i++) {
-            f3 = f1 + f2;
-            f1 = f2;
-            f2 = f3;
+        if (n <= 2) return n;
+        int[] dp = new int[n];
+        dp[0] = 1;
+        dp[1] = 2;
+        for (int i = 2; i < n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
         }
-        return f3;
+        return dp[n - 1];
     }
 
 }

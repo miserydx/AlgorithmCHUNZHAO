@@ -48,6 +48,9 @@ package array_linkedlist;
 // Related Topics 数组 双指针
 public class L_11_Container_With_Most_Water {
 
+    /**
+     * 双指针左右夹逼
+     */
     public int maxArea(int[] height) {
         int left = 0;
         int right = height.length - 1;
