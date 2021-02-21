@@ -16,6 +16,9 @@ import java.util.List;
  */
 public class L_206_Reverse_Linked_List {
 
+    /**
+     * 从头节点的前一个null节点prev开始，头节点往后移，prev也往后移
+     */
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
         while (head != null) {

@@ -55,12 +55,12 @@ public class L_25_Reverse_Nodes_K {
      * 反转一段链表
      *
      * @param head 当前这段的头节点
-     * @param tail 下一段的头结点
+     * @param nextHead 下一段的头结点
      * @return 反转后的头节点
      */
-    private ListNode reverse(ListNode head, ListNode tail) {
+    private ListNode reverse(ListNode head, ListNode nextHead) {
         ListNode prev = null;
-        while (head != tail) {
+        while (head != nextHead) {
             ListNode temp = head.next;
             head.next = prev;
             prev = head;

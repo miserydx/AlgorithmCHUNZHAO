@@ -44,6 +44,10 @@ public class L_15_Three_Sum {
 
     /**
      * 三指针，1从左往右，23左右夹逼
+     * 0.先排序
+     * 1.1指针的所指数字大于0直接返回
+     * 2.1指针指向数字和之前指向的数字相同则跳过，这里注意i>0
+     * 3.while套while
      */
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();

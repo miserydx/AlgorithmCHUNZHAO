@@ -37,7 +37,9 @@
 public class L_221_最大正方形 {
 
     /**
-     * dp[i+1][j+1] = min(dp[i][j], dp[i-1][j], dp[i][j-1]) + 1
+     * dp[i][j]为当前最大正方形边长，等于左、左上、上中最小的+1
+     * 进入判断的条件是左上=='1'
+     * dp方程：dp[i+1][j+1] = min(dp[i][j], dp[i-1][j], dp[i][j-1]) + 1
      * 见附件图[file/最大正方形.png]
      */
     public int maximalSquare(char[][] matrix) {

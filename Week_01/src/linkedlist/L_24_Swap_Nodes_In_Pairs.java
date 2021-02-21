@@ -50,15 +50,14 @@ public class L_24_Swap_Nodes_In_Pairs {
         ListNode cur = head;
         ListNode result = head.next;
         while (cur != null && cur.next != null) {
-            ListNode temp = cur;
+            ListNode temp = cur.next;
             if (prev != null) {
-                prev.next = cur.next;
+                prev.next = temp;
             }
-            prev = cur.next;
-            cur = cur.next.next;
+            cur.next = cur.next.next;
             temp.next = cur;
-            prev.next = temp;
-            prev = temp;
+            prev = cur;
+            cur = cur.next;
         }
         return result;
     }
