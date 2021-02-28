@@ -55,16 +55,15 @@ public class L_189_Rotate_Array {
         k = k % nums.length;
         int count = 0;
         for (int i = 0; count < nums.length; i++) {
-            int p = i;
-            int prevNum = nums[p];
+            int cur = i;
+            int prev = nums[cur];
             do {
-                int nextIndex = (p + k) % nums.length;
-                int tempNum = nums[nextIndex];
-                nums[nextIndex] = prevNum;
-                prevNum = tempNum;
-                p = (p + k) % nums.length;
+                cur = (cur + k) % nums.length;
+                int temp = nums[cur];
+                nums[cur] = prev;
+                prev = temp;
                 count++;
-            } while (p != i);
+            } while (cur != i);
         }
     }
 

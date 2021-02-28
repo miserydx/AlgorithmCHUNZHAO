@@ -1,14 +1,33 @@
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.LockSupport;
+
 public class Main {
+
+    static class MyData {
+
+        volatile int number = 0;
+
+        public void addTo60() {
+            this.number = 60;
+        }
+    }
 
     public static void main(String[] args) {
         System.out.println("dsadasdssss");
-        int first = 127;
-        byte type = (byte) (first >> 4);
-//        byte type = (byte) (first);
-        System.out.println("type = " + type);
-        byte b = 21;
-        int i = (int) b;
-        System.out.println("i = " + i);
+        MyData myData = new MyData();
+        new Thread(() -> {
+            long threadStartTime = System.currentTimeMillis();
+            //假设在进行运算
+            for(int i = 0;i<1000000;i++){
+
+            }
+            myData.addTo60();
+        }).start();
+        while (myData.number == 0) {
+
+        }
+        System.out.println("main end");
     }
 
 }

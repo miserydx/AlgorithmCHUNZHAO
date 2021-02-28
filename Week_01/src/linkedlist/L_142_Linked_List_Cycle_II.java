@@ -58,22 +58,24 @@ import utils.ListNode;
 public class L_142_Linked_List_Cycle_II {
 
     public ListNode detectCycle(ListNode head) {
-        if (head == null || head.next == null) return null;
-        ListNode slow = head;
-        ListNode fast = head;
+        if (head == null || head.next == null) {
+            return null;
+        }
+        ListNode slow = head.next;
+        ListNode fast = head.next.next;
         ListNode temp = null;
         while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
             if (slow == fast) {
                 temp = slow;
                 break;
             }
+            slow = slow.next;
+            fast = fast.next.next;
         }
         if (temp != null) {
-            while (temp != head) {
-                temp = temp.next;
+            while (head != temp) {
                 head = head.next;
+                temp = temp.next;
             }
         }
         return temp;
